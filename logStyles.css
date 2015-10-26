@@ -1,0 +1,149 @@
+Body {
+    font-family : Montserrat;
+    background-color : #3399FF;
+    color : #FFFFFF;
+    font-size : 18pt;
+}
+body {
+    font-size: 1.4em;
+}
+
+fieldset{
+    overflow: hidden;
+    float: center;
+    border: 1px solid #FFF;
+    max-width: 750px;
+    margin:0 auto;
+    display: block;
+    font-size: 1.2em;
+}
+
+.clear_both {
+    clear: both;
+}
+
+.submit_button {
+    margin-left:auto;
+    margin-right:auto;
+    width: 50%;
+    display: block;
+    clear: both;
+    margin-top: 1em;
+    font-size: 1.4em;
+    border-radius: 5px;
+    background-color: #FFF;
+    border: 0;
+    cursor: pointer;
+    padding: 0.25em 0;
+}
+label {
+    display: block;
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+/*
+input {
+    width: 0%;
+    padding: 0.2em;
+    float: right;
+    font-size: 1.3em;
+}
+*/
+
+form > div {
+    margin: 5em;
+}
+label {
+    display: block;
+}
+.form_field_item {
+    width: 30%;
+    float: left;
+    font-size: 1em;
+}
+.wrapper {
+    text-align: center;
+}
+.button {
+    position: absolute;
+    top: 50%;
+    padding: 0.2em;
+}
+.form_field {
+    margin: 0.25em;
+    font-size: 1.3em;
+}
+
+.UserInfo {
+    font-size: 1.6em;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    /*width: 300px;
+    height: 400px;
+    border: 1px solid #FFFFFF;  */
+}
+.UserInfoIncorrect {
+    font-size: 1.6em;
+    position: absolute;
+    top: 0px;
+    left: 0;
+    /*width: 300px;
+    height: 400px;
+    border: 1px solid #FFFFFF;  */
+}
+
+
+
+/*
+Blinker 
+I'm not sure how this works, but hopefully it will allow me to blink the timer */
+.blink_text {
+    -webkit-animation-name: blinker;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-name: blinker;
+    -moz-animation-duration: 1s;
+    -moz-animation-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+    animation-name: blinker;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    color: red;
+}
+@-moz-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+@-webkit-keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
+@keyframes blinker {
+    0% {
+        opacity: 1.0;
+    }
+    50% {
+        opacity: 0.0;
+    }
+    100% {
+        opacity: 1.0;
+    }
+}
