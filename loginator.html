@@ -1,141 +1,70 @@
-<!-- To Do:
-__ Sound for each of the last 5 seconds
-__ Add graphics 
-__ Add visual styles -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+	<head>
+		<!-- To Do Before Release: __ Individual sounds for multiplier 1,2, and 3 __ Switch to JAlert __ -->
+		<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
+		<link rel="stylesheet" type="text/css" href="logStyles.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script type="text/javascript" src="loginatorJava.js"></script>
+	</head>
+	<body>
+		<h1 id="title" align="center">Loginator!</h1>
 
-<!--JAVA:-->
-<!--Include jquery library-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!--Include canvas library and character scripts-->
-<script src="http://powstatan.wikispaces.com/file/view/html5-canvas-game-character-2.js/563371763/html5-canvas-game-character-2.js"></script>
-<script src="http://powstatan.wikispaces.com/file/view/excanvas.js/563341207/excanvas.js"></script>
-<!--Include my java functions-->
-<script src="https://github.com/powstatan/loginator/blob/master/loginatorJava.js"></script>
-
-
-<!--CSS-->
-<!--Include main stylesheet-->
-<script src="https://github.com/powstatan/loginator/blob/master/logStyles.css"></script>
-<!--Include google font-->
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat">
-<h1 id="title" align="center">Loginator!</h1>
-
-
-
-
-<fieldset class=removeMe>
-   
-    <legend>First, enter your BCPS One username and password:</legend>
-    <div class='form_field'>
-        <label for="real_username_field" align=center>Username: </label>
-        <input type="text" align=center class="removeMe form_field_item" id="real_username_field" autofocus=1 autocomplete=off />
-    </div>
-    <div class='clear_both'></div>
-    <div class='form_field'>
-        <label align=center for="real_password_field">Password: </label>
-        <input type="text"  id="real_password_field" class="form_field_item"/>
-    </div>
-    <div class='clear_both'></div>
-    <script>
-        $(#mySubmit).keyup(function(event) {
-            if (event.keyCode == 13) {
-                $(credentials();)
-            }
-        });
-    </script>
-    <input align=center type=submit id="mySubmit" class="submit_button" value="Submit" onclick="credentials()" class=removeMe/>
-</fieldset>
-<br />
-<p1 class=removeMe><var id="real_username" class=removeMe></p1>
-<p1 class =removeMe><var id="real_password" class = removeMe></p1>
-
-<script>
-    var score=0;
-    var multiplier=0;
-    var highScore=0;
-</script>
-
-<div id="mycounter" class = "gametime UserInfo"></div>  
-<div id="tenSecLeft" class = "gametime UserInfo blink_text"></div> 
-<p id = "highScoreID" ></p>  
-<script>    
-i = 60; 
-function onTimer() {
-
-if (i >= 10) {
-           document.getElementById('mycounter').innerHTML = "Time left: " + i;  
-           }
-  else {  
-    document.getElementById('mycounter').innerHTML = "";  
-    document.getElementById('tenSecLeft').innerHTML = "Time left: " + i;
-             }
-    if (i < 0) {
-    alert("Time's up!");
-    $('.gametime').hide();
-    if (highScore < score) {
-    highScore = score;
-    }
-    <!--document.getElementById("highScoreID").innerHTML = "High Score: " + highScore);-->
-    return;
-  }
-  else {
-    setTimeout(onTimer, 1000);
-    i--;
-  }
-
-}
-</script>
-
-<p id = user_feedback_score class = "gametime UserInfo"> </p>
-   
-<p id = user_feedback_multiplier class = "gametime UserInfo"> </p>
+		<div class="countdown cell">
+			<div class="num">3 2 1 GO!!</div>
+		</div>    
     
-<fieldset class="gametime">
-    <legend>Log in! Fast!</legend>
-    <div class='form_field'>
-        <label class="gametime">Username: </label>
-        <input id="game_username_field" autofocus=1 class="gametime form_field_item">
-    </div>
-    <div class='clear_both'></div>
-    <div class='form_field'>
-        <label class="gametime">Password: </label>
-        <input type="password" id="game_password_field" class ="gametime form_field_item">
-       <div class="clear_both"></div>
-    </div>
-         <button class="submit_button gametime" id = "button_game_start" onclick="game_login_entered()">log in</button>
-</fieldset>
-<script>
-$(document).ready(function() {
-  $('input:text:first').focus();
-});
-    
-    
-    $("#mysubmit").keyup(function(event){
-    if(event.keyCode == 13){
-        $(#button_game_start).click();
-    }
-});
-</script>
+		<fieldset class="removeMe" padding=0>
+			<legend>First, enter your BCPS One username and password:</legend>
+			<div class="form_field">
+				<label for="real_username_field" align="center">Username:</label>
+				<input type="text" align="center" class="removeMe form_field_item real-field" id="real_username_field" autofocus=1 autocomplete=off />
+			</div>
+			<div class='clear_both'></div>
+			<div class='form_field'>
+				<label align=center for="real_password_field">Password:</label>
+				<input type="text" id="real_password_field" class="form_field_item real-field" autocomplete=off/>
+			</div>
+			<div class='clear_both'></div>
+			<input align="center" type="submit" id="mySubmit" class="submit_button" value="Submit" onclick="credentials()" class=removeMe/>
+		</fieldset>
 
-<p id = user_feedback1 class = "gametime UserInfoIncorrect"> </p>
+		<br />
+		
+		<p1 class="removeMe"><var id="real_username"></p1>
+		<p1 class="removeMe"><var id="real_password"></p1>
 
-<p id = user_feedback2 class = "gametime UserInfoIncorrect"> </p>    
+		<div id="mycounter" class = "gametime UserInfo"></div>  
+		<div id="tenSecLeft" class = "gametime UserInfo blink_text"></div> 
+		<div id ="highScoreID" class="hsClass"></div>
+		<!--<div id ="hugeTime" class="HugeTimeClass"></div>-->
 
+		<p id = user_feedback_score class = "gametime UserInfo"> </p>
 
-<!--This hides the game form. We will show it in credentials() when the game starts.  -->
-<script>
-     $('.gametime').hide();
-</script>
+		<p id = user_feedback_multiplier class = "gametime UserInfo"> </p>
 
-<!--
+		<fieldset class="gametime" padding=0>
+			<legend>Log in! Fast!</legend>
+			<div class='form_field'>
+				<label class="gametime">Username: </label>
+				<input id="game_username_field" autofocus=1 class="gametime form_field_item gametime-field">
+			</div>
+			<div class='clear_both'></div>
+			<div class='form_field'>
+				<label class="gametime">Password: </label>
+				<input type="password" id="game_password_field" class ="gametime form_field_item gametime-field">
+				<div class="clear_both"></div>
+			</div>
+			<button class="submit_button gametime" id = "button_game_start" onclick="game_login_entered()">log in</button>
+		</fieldset>
 
-    <div id="canvasDiv"></div>
-    <script type="text/javascript" src="html5-canvas-game-character-2.js"></script>
-    <script type="text/javascript">
-    	prepareCanvas(document.getElementById("canvasDiv"), 490, 220);
-		document.getElementById("canvasDiv").onmousedown = function() { 
-			jump(); }
-    </script>
--->
-  </body>
+		<img id = "monster" class="monsterClass" style="margin-left:auto; margin-right: auto; display:block" src="http://powstatan.wikispaces.com/file/view/monster_standing.png/564140941/monster_standing.png"/>
+
+		<p id = user_feedback1 class = "gametime UserInfoIncorrect"> </p>
+		<p id = user_feedback2 class = "gametime UserInfoIncorrect"> </p>    
+
+	</body>
 </html>
+    
+    
+  

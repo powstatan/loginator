@@ -7,8 +7,11 @@ Body {
 body {
     font-size: 1.4em;
 }
-
-fieldset{
+img {
+    max-width: 40%;
+    height: auto;
+}
+fieldset {
     overflow: hidden;
     float: center;
     border: 1px solid #FFF;
@@ -17,11 +20,14 @@ fieldset{
     display: block;
     font-size: 1.2em;
 }
-
+.hsClass {
+    float: center;
+    font-size: 1.4em;
+    text-align:center;
+}
 .clear_both {
     clear: both;
 }
-
 .submit_button {
     margin-left:auto;
     margin-right:auto;
@@ -42,15 +48,6 @@ label {
     float: left;
     text-align: right;
 }
-/*
-input {
-    width: 0%;
-    padding: 0.2em;
-    float: right;
-    font-size: 1.3em;
-}
-*/
-
 form > div {
     margin: 5em;
 }
@@ -61,6 +58,7 @@ label {
     width: 30%;
     float: left;
     font-size: 1em;
+    border: 5px solid transparent;
 }
 .wrapper {
     text-align: center;
@@ -74,32 +72,25 @@ label {
     margin: 0.25em;
     font-size: 1.3em;
 }
-
 .UserInfo {
     font-size: 1.6em;
     position: absolute;
     top: 0px;
     right: 0;
-    /*width: 300px;
-    height: 400px;
-    border: 1px solid #FFFFFF;  */
 }
 .UserInfoIncorrect {
     font-size: 1.6em;
     position: absolute;
     top: 0px;
     left: 0;
-    /*width: 300px;
-    height: 400px;
-    border: 1px solid #FFFFFF;  */
 }
-
-
-
+.monster_jump {
+    margin-top: -200px;
+}
 /*
 Blinker 
 I'm not sure how this works, but hopefully it will allow me to blink the timer */
-.blink_text {
+ .blink_text {
     -webkit-animation-name: blinker;
     -webkit-animation-duration: 1s;
     -webkit-animation-timing-function: linear;
@@ -146,4 +137,50 @@ I'm not sure how this works, but hopefully it will allow me to blink the timer *
     100% {
         opacity: 1.0;
     }
+}
+
+/*
+.correct-answer{
+    border-color:gray;
+    border-width:1px;
+}
+*/
+.wrong-answer{
+    border-color:red;
+    border-width:5px;
+}
+
+
+.cell{
+    width: 2em;  
+    height: 1em;
+    border:0px dashed rgba(255,255,255,0.1);
+    font-size:320px;
+    font-family:Montserrat;
+    overflow: hidden;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin:-0.5em 0 0  -0.5em;
+    opacity:0;
+    animation:go 4s;
+    transform-origin:left bottom;
+}
+.num{
+    position:absolute;
+    width: 1em;
+    color:green;
+    line-height: 1em;  
+    text-align: center;
+    text-shadow:2px 2px 4px rgba(255,255,255,.3);
+    animation:run 4s steps(4);
+}
+@keyframes run{
+    0%{top:0;}
+    100%{top:-4em;}
+}
+@keyframes go{
+  0%   {opacity:1;}
+  84%  {opacity:1;transform:rotate(0deg) scale(1);}
+  100% {opacity:0;transform:rotate(360deg) scale(.01);}
 }
