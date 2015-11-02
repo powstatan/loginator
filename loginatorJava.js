@@ -67,7 +67,9 @@ function onTimer() {
     		$('.gametime').hide();
             $('.hsClass').hide();
     		$('.countdown').show();
-            document.getElementById("monster").src = "http://powstatan.wikispaces.com/file/view/monster_head_only.png/564139869/monster_head_only.png";
+            document.getElementById("monster").src = 
+
+"http://powstatan.wikispaces.com/file/view/monster_head_only.png/564139869/monster_head_only.png";
 
         } else {
             i = 64;
@@ -191,7 +193,7 @@ function game_login_entered() {
         if (pw == pw.toUpperCase() && pw != "") {
             alert('Is your Capslock on?');
         }
-	
+
         document.getElementById("user_feedback1").innerHTML = "";
         document.getElementById("user_feedback2").innerHTML = "";
         document.getElementById("game_password_field").placeholder = real_password;
