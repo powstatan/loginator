@@ -1,3 +1,5 @@
+
+
 $(document).ready(function () {
 
     $('.real-field').keyup(function (event) {
@@ -91,9 +93,7 @@ function onTimer() {
         }
     } else {
         setTimeout(onTimer, 1000);
-        i--;
-       
-         
+        i--;        
     }
 }
 
@@ -105,7 +105,7 @@ function credentials() {
     var pw = document.getElementById('real_password');
 
     if (real_username == "" && real_password == "") {
-        alert("You must enter a username and a password.");
+        alert('You must enter a username and a password.');
         $('#game_username_field').focus();
         return;
     } else if (real_username == "") {
@@ -113,12 +113,19 @@ function credentials() {
         $('#game_username_field').focus();
         return;
     } else if (real_password == "") {
-        alert("You must enter a password.");
+        alert('You must enter a password.');
         $('#game_password_field').focus();
         return;
     }
 
-    var teacher_confirmation = confirm("Check with your teacher. Is this correct?\nUsername: " + real_username + "\nPassword: " + real_password);
+    var teacher_confirmation = true;
+
+//jConfirm('Title', 'Are you sure?', function(teacher_confirmation) {     
+
+// });
+
+
+	//jconfirm('Title','message', function(teacher_confirmation));
     if (teacher_confirmation == true) {
         //START GAME
 
@@ -134,6 +141,7 @@ function credentials() {
         return;
     }
 }
+
 
 function game_login_entered() {
     var real_password = document.getElementById('real_password_field').value;
