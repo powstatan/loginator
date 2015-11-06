@@ -1,5 +1,4 @@
 
-
 $(document).ready(function () {
 
     $('.real-field').keyup(function (event) {
@@ -108,11 +107,8 @@ function credentials() {
     var pw = document.getElementById('real_password');
 
     if (real_username == "" && real_password == "") {
-<<<<<<< HEAD
+
         warningAlert('Whoops!','You must enter a username and a password.');
-=======
-        alert('You must enter a username and a password.');
->>>>>>> origin/master
         $('#game_username_field').focus();
         return;
     } else if (real_username == "") {
