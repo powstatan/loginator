@@ -67,7 +67,9 @@ function onTimer() {
     		$('.gametime').hide();
             $('.hsClass').hide();
     		$('.countdown').show();
-            document.getElementById("monster").src = "http://powstatan.wikispaces.com/file/view/monster_head_only.png/564139869/monster_head_only.png";
+            document.getElementById("monster").src = 
+
+"http://powstatan.wikispaces.com/file/view/monster_head_only.png/564139869/monster_head_only.png";
 
         } else {
             i = 64;
@@ -93,9 +95,7 @@ function onTimer() {
         }
     } else {
         setTimeout(onTimer, 1000);
-        i--;
-       
-         
+        i--;        
     }
 }
 
@@ -108,7 +108,11 @@ function credentials() {
     var pw = document.getElementById('real_password');
 
     if (real_username == "" && real_password == "") {
+<<<<<<< HEAD
         warningAlert('Whoops!','You must enter a username and a password.');
+=======
+        alert('You must enter a username and a password.');
+>>>>>>> origin/master
         $('#game_username_field').focus();
         return;
     } else if (real_username == "") {
@@ -116,12 +120,19 @@ function credentials() {
         $('#game_username_field').focus();
         return;
     } else if (real_password == "") {
-        alert("You must enter a password.");
+        alert('You must enter a password.');
         $('#game_password_field').focus();
         return;
     }
 
-    var teacher_confirmation = confirm("Check with your teacher. Is this correct?\nUsername: " + real_username + "\nPassword: " + real_password);
+    var teacher_confirmation = true;
+
+//jConfirm('Title', 'Are you sure?', function(teacher_confirmation) {     
+
+// });
+
+
+	//jconfirm('Title','message', function(teacher_confirmation));
     if (teacher_confirmation == true) {
         //START GAME
 
@@ -137,6 +148,7 @@ function credentials() {
         return;
     }
 }
+
 
 function game_login_entered() {
     var real_password = document.getElementById('real_password_field').value;
@@ -186,7 +198,7 @@ function game_login_entered() {
         if (pw == pw.toUpperCase() && pw != "") {
             alert('Is your Capslock on?');
         }
-	
+
         document.getElementById("user_feedback1").innerHTML = "";
         document.getElementById("user_feedback2").innerHTML = "";
         document.getElementById("game_password_field").placeholder = real_password;
