@@ -1,13 +1,11 @@
-"scripts": {
-"start":"node server.js",
-"main":"server.js"
-}
 {
   "name": "loginApp",
   "version": "0.0.0",
   "dependencies": {},
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    start":"node server.js",
+"main":"server.js"
   },
   "devDependencies": {
     "estraverse": "~4.1.0",
