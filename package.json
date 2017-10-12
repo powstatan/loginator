@@ -1,8 +1,7 @@
 "scripts": {
-"start":"node main.controller.js"
-},
-"main":"main.controller.js"
-
+"start":"node server.js",
+"main":"server.js"
+}
 {
   "name": "loginApp",
   "version": "0.0.0",
